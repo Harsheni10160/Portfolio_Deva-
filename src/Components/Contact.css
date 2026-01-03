@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+FELL+English:ital@0;1&family=Dancing+Script:wght@700&display=swap');
+
+:root {
+  --bg: #e9e2f6;
+  --purple-dark: #2e1065;
+  --purple: #6d28d9;
+  --purple-soft: #ede9fe;
+  --border: #c4b5fd;
+  --text-dark: #1f2937;
+}
+
+.contact-wrapper {
+  width: 100%;
+  /* let the section size to its content to avoid large empty space */
+  min-height: auto;
+  background: black;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2rem 2.5rem;
+  margin-top: 3.5rem; /* space below Projects section */
+  gap: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ---------- LEFT CONTENT ---------- */
+.contact-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.contact-hed {
+  font-family: 'IM FELL English', serif;
+  font-size: 3rem;
+  color: #4ade80;
+  line-height: 1;
+  margin-bottom: -1rem;
+  letter-spacing: 1px;
+  margin-left: 20px;
+  margin-right:250px;
+  text-align: left;
+}
+.contact-hed2 {
+  font-family: 'IM FELL English', serif;
+  font-size: 3rem;
+  color: #4ade80;
+  margin-left: 0;
+  transform: rotate(-2deg);
+  text-align: left;
+}
+.highlight-purple {
+  font-family: 'Dancing Script', cursive;
+  color: #a855f7;
+}
+.contact-left p {
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+.contact-left .contact-int{
+  font-family: 'IM FELL English', serif;
+  font-size: 1.5rem;
+  color: #a855f7;
+  margin-left: 20px;
+  margin-top: -10px;
+  text-align: left;
+}
+.contact-left .contact-int2{
+  font-family: 'IM FELL English', serif;
+  font-size: 1.5rem;
+  color: #4ade80;
+  margin-left: 5px;
+  margin-top: -10px;
+  text-align: left;
+}
+
+
+/* ---------- TAG BUTTONS ---------- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tags button {
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.tags button:hover {
+  background: var(--purple-soft);
+  color: black;
+}
+
+/* ---------- FORM ---------- */
+.contact-form {
+  background: transparent;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.contact-form textarea {
+  height: 140px;
+  resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--purple);
+}
+
+/* ---------- SUBMIT BUTTON ---------- */
+.contact-form button {
+  margin-top: 1rem;
+  background: var(--purple-dark);
+  color: white;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: var(--purple);
+  
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+}

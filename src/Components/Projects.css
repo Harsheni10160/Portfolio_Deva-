@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --bg-color: #050505;
+  --accent-green: #4ade80;
+  --accent-purple: #a855f7;
+  --accent-purple-dark: #8b5cf6;
+  --btn-dark-purple: #2e1065;
+  --card-bg: #f3f0ff;
+}
+
+/* ========================= */
+/* Wrapper */
+/* ========================= */
+.projects-wrapper {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 5%; /* added top padding to move section down */
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* ========================= */
+/* Content Container */
+/* ========================= */
+.project-container {
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ========================= */
+/* Header Typography */
+/* ========================= */
+.header-section {
+  margin-bottom: 1.25rem;
+  margin-top: 2rem;
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+.project-heading {
+  font-family: 'IM Fell English', serif;
+  font-size: 3rem;
+  color: var(--accent-green);
+  line-height: 1;
+  margin-bottom: -1rem;
+  letter-spacing: 1px;
+  margin-top: -50px;
+}
+
+.project-subheading {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #a020f0;
+  margin-left: 8px;
+  margin-bottom: -40px;
+}
+
+/* ... Keep your fonts and root variables same as before ... */
+
+/* ========================= */
+/* Wrapper Layout */
+/* ========================= */
+.projects-wrapper {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  padding: 4rem 0 2rem; /* add top padding so marquee sits lower */
+  overflow: hidden; /* Hide horizontal scrollbar */
+  display: flex;
+  flex-direction: column;
+}
+
+.project-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+.header-section {
+  padding-left: 5%; /* Add padding back to header text */
+  margin-bottom: 2rem;
+}
+
+/* ========================= */
+/* Marquee Animation Logic */
+/* ========================= */
+
+.marquee {
+  width: 100%;
+  overflow: hidden; /* Cuts off the content that goes outside */
+  padding: 20px 0; /*Space for box-shadows so they don't get cut off */
+  
+  /* Optional: Fades the edges like in premium carousels */
+  /* fade mask removed to avoid dark/blurred side shading */
+}
+
+.marquee-content {
+  display: flex;
+  gap: 2rem; /* The gap between cards */
+  width: max-content; /* Force container to be as wide as all cards combined */
+  
+  /* The Animation */
+  animation: scroll-left 25s linear infinite;
+}
+
+/* Pause the animation when hovering over the track */
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Move left by 50% of the width. 
+       Since we duplicated the list, -50% is exactly where the copy starts. 
+       This makes the loop invisible. */
+    transform: translateX(-50%);
+  }
+}
+
+/* ========================= */
+/* Card Styling */
+/* ========================= */
+.project-card {
+  /* IMPORTANT: Cards need a fixed width in a marquee */
+  width: 320px; 
+  flex-shrink: 0; /* Prevents flexbox from squishing the cards */
+  
+  background-color: #9882e6;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for individual cards */
+.project-card:hover {
+  transform: translateY(-10px);
+  z-index: 10;
+}
+
+/* ... Keep image, title, and button styles same as before ... */
+.card-image-wrapper {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.card-desc {
+  font-family: 'Inter', sans-serif;
+  color: black;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  flex-grow: 1; /* Ensures buttons align at bottom */
+}
+
+.card-btn {
+  background-color: var(--btn-dark-purple);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.card-btn:hover {
+  background-color: var(--accent-purple);
+}

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+
+.side-nav {
+  position: fixed;
+  right: 12px; /* pinned to the right edge */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: transparent;
+  z-index: 2000;
+}
+
+/* Nav item wrapper */
+.side-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #e5e7eb;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  transition: color 0.25s ease;
+}
+
+/* Short letter (H, T, P, C) */
+.short {
+  background: rgba(15, 23, 42, 0.85);
+  font-family: 'IM Fell English', serif;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  min-width: 36px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  color: #4ade80;
+}
+
+/* Full text (Home, Tech Stack…) */
+.full {
+  position: absolute;
+  right: calc(100% + 12px); /* show to the left of the short letter */
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  background: rgba(15, 23, 42, 0.95);
+  color: #a855f7;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  font-family: 'IM Fell English', serif;
+  pointer-events: none;
+}
+
+/* Reveal text on hover */
+.side-nav-item:hover .full,
+.side-nav-item:focus-visible .full {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Accessibility focus */
+.side-nav-item:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
+
+/* Mobile handling */
+@media (max-width: 768px) {
+  .side-nav {
+    right: 8px;
+    top: 65%;
+  }
+
+  .full {
+    display: none;
+  }
+}

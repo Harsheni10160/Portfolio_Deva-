@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+FELL+English:ital@0;1&family=Dancing+Script:wght@700&display=swap');
+
+:root {
+  --bg: #050505;
+  --text: #e8cdcd;
+  --muted: #9ca3af;
+  --accent-green: #4ade80;
+  --accent-purple: #a855f7;
+  --primary: #3b82f6;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { 
+  font-family: 'IM FELL English', serif; 
+  background: var(--bg); 
+  color: var(--text); 
+  overflow-x: hidden;
+}
+
+/* Outer hero wrapper */
+.portfolio-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(1200px 600px at 20% 10%, rgba(15,22,22,0.6) 0%, rgba(2,6,23,0) 60%),
+              radial-gradient(1000px 500px at 80% 20%, rgba(0,0,0,0.475) 0%, rgba(2,6,23,0) 60%),
+              var(--bg);
+   background: #050505;
+  padding: 2rem 1.5rem;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+/* --- Left Section --- */
+.left-section {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Logo Position */
+.logo { 
+  position: absolute; 
+  top: -20px;
+  margin-top: 30px;
+  margin-bottom:0.25rem; 
+  left: 1%; 
+  font-size: 1.2rem; 
+  font-weight: bold;
+}
+
+/* Grey Pill */
+.top-pill {
+  width: 130px;
+  height: 35px;
+  background-color: rgba(92, 230, 186, 0.002);
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+}
+
+/* Headings */
+.main-heading {
+  font-family: 'IM FELL English', serif;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 1rem;
+  margin-top: -0.75rem;
+  font-size: 2.5rem;
+}
+
+.sub_heading {
+  margin-bottom: -15px;
+}
+
+.highlight-green { 
+  color: var(--accent-green); 
+  font-style: italic; 
+}
+
+.highlight-script {
+  display: inline-block;
+  font-family: 'Dancing Script', cursive;
+  color: var(--accent-purple);
+  font-size: 3rem;
+  margin-top: -100px;
+  margin-bottom: 5px;
+  margin-left: 0.5rem;
+  transform: rotate(-3deg);
+}
+
+.description {
+  color: var(--text);
+  opacity: 0.85;
+  max-width: 32rem;
+  margin: 1rem 0 10rem 0;
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+/* --- Buttons --- */
+.action-buttons {
+  display: flex;
+  margin-top: 1rem;
+  gap: 1.2rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary, .btn-outline {
+  font-family: 'IM FELL English', serif;
+  padding: 0.85rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary { 
+  background:transparent; 
+  color:#4ef24e; 
+  border: 2px solid #4ef24e; 
+}
+
+.btn-outline { 
+  background: transparent; 
+  color: #a855f7; 
+  border: 2px solid #a855f7; 
+}
+
+.btn-primary:hover, .btn-outline:hover {
+  transform: translateY(-3px);
+  color: white;
+  box-shadow: 0 10px 20px rgba(161, 146, 224, 0.386);
+}
+
+/* --- Social Icons --- */
+.social-icons { 
+  display: flex; 
+  gap: 1rem;
+  margin-top: 0.75rem; 
+}
+
+.icon-circle {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(30, 41, 59, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.35);
+  color: var(--muted);
+  transition: all 0.25s ease;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  text-decoration: none;
+}
+
+.icon-circle svg {
+  width: 18px;
+  height: 18px;
+  color: white;
+}
+
+.icon-circle:hover { 
+  transform: translateY(-2px) scale(1.05); 
+  color:white; 
+  background-color: #a855f7;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.982); 
+}
+
+/* --- Right Section (Image) --- */
+.right-section { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  position: relative;
+}
+
+/* 🔥 IMAGE CARD ANIMATION ADDED HERE */
+.profile-container { 
+  width: 100%;
+  max-width: 500px;
+  position: relative; 
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-container:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 
+    0 20px 40px rgba(0,0,0,0.6),
+    0 0 30px rgba(74,222,128,0.35);
+}
+
+.profile-img { 
+  width: 500px; 
+  height: 500px; 
+  aspect-ratio: 4/5;
+  object-fit: cover; 
+  border-radius: 6px; 
+  display: block; 
+  background-color: #222;
+  transition: transform 0.4s ease;
+}
+
+.profile-container:hover .profile-img {
+  transform: scale(1.05);
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.signature { 
+  position: relative; 
+  left: -30px; 
+  bottom: 30px; 
+  font-style: italic; 
+  font-family: 'IM FELL English', serif; 
+  font-size: 1rem; 
+  color: #fff; 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8); 
+  text-align: right;
+}
+
+/* --- Responsive Adjustments --- */
+@media (min-width: 900px) {
+  .container { 
+    grid-template-columns: 1fr 1fr; 
+    gap: 4rem; 
+  }
+  
+  .main-heading { 
+    font-size: 4rem; 
+  }
+  
+  .highlight-script {
+    font-size: 5rem;
+  }
+  
+  .description { 
+    font-size: 1.25rem; 
+    margin: 1rem 0 3rem 0; 
+  }
+}
+
+@media (max-width: 899px) {
+  .portfolio-wrapper {
+    padding-top: 80px;
+  }
+
+  .left-section {
+    align-items: center;
+    text-align: center;
+  }
+
+  .action-buttons {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn-primary, .btn-outline {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+  
+  .logo {
+    left: 20px;
+  }
+}

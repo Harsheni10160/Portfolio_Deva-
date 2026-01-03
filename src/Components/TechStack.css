@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Dancing+Script:wght@700&display=swap');
+
+:root {
+  --bg-color: #050505;
+  --border-color: #333;
+  --accent-purple: #a855f7;
+  --accent-green: #4ade80;
+}
+
+body {
+  background-color: var(--bg-color);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.tech-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.Techsub_heading {
+  margin-bottom: -27px;
+}
+
+.Tech-green {
+  color: var(--accent-green);
+}
+
+.Tech-script {
+  display: inline-block;
+  font-family: 'Dancing Script', cursive;
+  color: var(--accent-purple);
+  font-size: 3rem;
+  margin-top: -100px;
+  margin-bottom: 40px;
+  margin-left: 0.5rem;
+  transform: rotate(-3deg);
+}
+
+/* GRID */
+.tech-grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 100%;
+  max-width: 1000px;
+  border: 1px solid var(--border-color);
+  background-color: var(--border-color);
+  gap: 1px;
+}
+
+.tech-card {
+  background-color: #000;
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* GRID SPANS */
+.item-0, .item-1 { grid-column: span 6; }
+.item-2, .item-3, .item-4, .item-5 { grid-column: span 3; }
+.item-6, .item-7, .item-8 { grid-column: span 4; }
+.item-9, .item-10, .item-11, .item-12 { grid-column: span 3; }
+.item-13, .item-14, .item-15 { grid-column: span 4; }
+
+/* LAYERS */
+.layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* BASE (COLORED ICON VISIBLE) */
+.base-layer {
+  background-color: #000;
+  z-index: 1;
+}
+
+.icon-base {
+  font-size: 3rem;
+  filter: none;              /* 🔥 COLORS ENABLED */
+  opacity: 1;
+}
+
+/* HOVER LAYER (PAPER FOLD) */
+.hover-layer {
+  background-color: #fff;
+  z-index: 2;
+
+  /* START AS FOLDED FROM TOP-LEFT */
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  transform-origin: top left;
+}
+
+/* ICON ON HOVER */
+.icon-hover {
+  font-size: 3.5rem;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.skill-label {
+  margin-top: 8px;
+  font-family: 'IM Fell English', serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #000;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease 0.15s;
+}
+
+/* 🔥 PAPER FOLD UNFOLD */
+.tech-card:hover .hover-layer {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.tech-card:hover .icon-hover {
+  transform: scale(1.1);
+}
+
+.tech-card:hover .skill-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .tech-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tech-card[class*="item-"] {
+    grid-column: span 1;
+  }
+}
