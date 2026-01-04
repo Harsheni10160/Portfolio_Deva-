@@ -5,6 +5,7 @@ import './Navigation.css';
 const Navigation = () => {
   const navItems = [
     { short: 'H', name: 'Home', href: '#home' },
+    { short: 'A', name: 'About Me', href: '#about' },
     { short: 'T', name: 'Tech Stack', href: '#tech' },
     { short: 'P', name: 'Projects', href: '#projects' },
     { short: 'C', name: 'Contact', href: '#contact' },

@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+FELL+English:ital@0;1&family=Dancing+Script:wght@700&display=swap');
+
+:root {
+  --bg-color: #050505;
+  --accent-green: #4ade80;
+  --accent-purple: #a855f7;
+  --text-light: #e8cdcd;
+  --text-muted: #9ca3af;
+}
+
+.about {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  padding: 5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Header */
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-title {
+  font-family: 'IM FELL English', serif;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--text-light);
+  margin-bottom: -1.5rem;
+  letter-spacing: 2px;
+}
+
+.about-title-green {
+  color: var(--accent-green);
+  font-style: italic;
+}
+
+.about-subtitle {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: var(--accent-purple);
+  transform: rotate(-2deg);
+  display: inline-block;
+  margin-top: -5.5rem;
+}
+
+/* Split Layout Container */
+.about-split-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin: 0 auto 5rem auto;
+  align-items: center;
+}
+
+/* Left Side - Video/Image */
+.about-media-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 3/4;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 2px solid rgba(74, 222, 128, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-video-wrapper:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 70px rgba(74, 222, 128, 0.2);
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Video Corner Label */
+.video-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: var(--accent-green);
+  font-family: 'IM FELL English', serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  z-index: 3;
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+/* Right Side - Content */
+.about-content-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 540px;
+  margin-top: -100px;
+}
+
+
+.about-intro {
+  margin-bottom: 2rem;
+}
+
+.about-name {
+  font-family: 'IM FELL English', serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.name-highlight {
+  color: var(--accent-purple);
+  font-style: italic;
+}
+
+.about-main-text {
+  font-family: 'IM FELL English', serif;
+  font-size: 1.125rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.about-secondary-text {
+  font-family: 'IM FELL English', serif;
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.status-indicator {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(74, 222, 128, 0.1);
+  border-radius: 2rem;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  font-family: 'IM FELL English', serif;
+  color: var(--accent-green);
+  font-size: 0.95rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-green);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Tech Stacks Section */
+.tech-stacks-section {
+  margin-top: 5rem;
+}
+
+.section-title {
+  font-family: 'IM FELL English', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title-highlight {
+  color: var(--accent-purple);
+  font-style: italic;
+}
+
+.tech-category {
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  font-family: 'IM FELL English', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent-green);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-green), var(--accent-purple));
+  border-radius: 1px;
+}
+
+/* Tech Grid */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tech-card {
+  background-color: #a855f7;
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  cursor: default;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  transition: left 0.5s ease;
+}
+
+.tech-card:hover::before {
+  left: 0;
+}
+
+/* Tech Icon */
+.tech-icon {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+}
+
+.tech-name {
+  font-family: 'IM FELL English', serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-split-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-video-wrapper {
+    max-width: 350px;
+  }
+
+  .about-name {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 3rem 1rem;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .about-split-container {
+    gap: 2rem;
+  }
+
+  .about-video-wrapper {
+    max-width: 300px;
+  }
+  
+ }  
+
+@media (max-width: 480px) {
+  .about-name {
+    font-size: 1.5rem;
+  }
+  
+  .about-main-text {
+    font-size: 1rem;
+  }
+
+  .about-video-wrapper {
+    max-width: 100%;
+  }
+  
+}
