@@ -109,7 +109,7 @@ import picture from '../assets/devalatest.jpeg';
 import { Github, Linkedin, Mail, Download } from 'lucide-react';
 
 function LandPage() {
-  const fullText = `Full Stack Developer who builds delightful user experiences.\n\nPassionate about building responsive and meaningful web experiences.`;
+  const fullText = `" Full Stack Developer who builds delightful user experiences.\n\nPassionate about building responsive and meaningful web experiences."`;
   const [displayedText, setDisplayedText] = useState('');
   const [developerText, setDeveloperText] = useState('');
   const developerWord = 'DEVELOPER';
