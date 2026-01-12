@@ -47,8 +47,8 @@ body {
   grid-template-columns: repeat(12, 1fr);
   width: 100%;
   max-width: 1000px;
-  border: 1px solid var(--border-color);
-  background-color: var(--border-color);
+  /* border: 1px solid var(--border-color); */
+  background-color: black;
   gap: 1px;
 }
 
