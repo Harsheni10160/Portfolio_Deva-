@@ -82,3 +82,21 @@
     display: none;
   }
 }
+
+@media (max-width: 480px) {
+  .side-nav {
+    right: 5px;
+    top: 60%;
+    gap: 10px;
+  }
+
+  .short {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    min-width: 32px;
+  }
+
+  .side-nav-item {
+    font-size: 0.8rem;
+  }
+}
